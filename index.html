@@ -35,19 +35,51 @@
         }
 
         figure {
-            margin-top: 30px;
+            margin: 40px 0; /* figure全体に上下40px余白 */
             max-width: 90%;
         }
 
         img {
             max-width: 100%;
             height: auto;
+            margin: 20px 0; /* 画像上下に余白 */
         }
 
         figcaption {
             margin-top: 10px;
             font-size: 0.9em;
             color: #ccc;
+        }
+
+        /* おしゃれなリンク */
+        a {
+            color: #00c3ff;
+            text-decoration: none;
+            position: relative;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 2px;
+            background-color: #00c3ff;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        a:hover {
+            color: #66e0ff;
+        }
+
+        a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
         }
 
         /* スマホ表示のときに画像サイズを調整（任意） */
@@ -70,116 +102,16 @@
 </head>
 <body>
     <h1>Thank you for coming</h1>
-    <p>2025年度文化祭にお越しいただきありがとうございました。</p>
-    <p>文化祭終了後、天文部制作のゲームをこのページにアップします。</p>
-    <p>公開までしばらくお待ちください。</p>
-
-    <figure>
-        <img src="fusei.png" alt="お待ちください">
-        <figcaption>もうすこし待っててね、ごめんね</figcaption>
-    </figure>
+    <p>2025年度、文化祭にお越しいただきありがとうございました。</p>
+    <p>文化祭で制作した天文部のゲームを掲載します。</p>
+    <p>ぜひ、ハイスコアを目指して遊んでみてください。</p> 
+    <p>1500点以上をとれたら、すごい！</p>
+    <a href="F_planet.html"><img src="gamen.png" ></a>
+    <h3>大ジャンプ</h3>　　PC：ENTER　　スマホ・タブレット：上矢印キー</p>
+    <h3>小ジャンプ</h3>　　PC：０（ゼロ）　　スマホ・タブレット：右矢印キー</p>
+    <h3>ミサイル</h3>　　PC：スペース　　スマホ・タブレット：右ボタン</p>
+    <h3>リセット（ED中）</h3>　　PC：R　　スマホ・タブレット：右ボタン</p>
+    <h3>リセット（プレイ中）</h3>　　PC：E　　スマホ・タブレット：（なし）</p>
+    <h2><a href="point_torisetsu.pdf">スコアの取得について</a></h2>    
 </body>
 </html>
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>天文部P班</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: left;
-        }
-
-        h1 {
-            margin-top: 40px;
-            font-size: 2em;
-            text-align: center;
-        }
-
-        p {
-            margin: 10px 20px;
-            font-size: 1em;
-        }
-
-        figure {
-            margin: 30px auto;
-            max-width: 90%;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-
-
-        }
-
-        figcaption {
-            margin-top: 10px;
-            font-size: 0.9em;
-            color: #ccc;
-        }
-
-        /* スマホ表示のときに画像サイズを半分に */
-        @media (max-width: 600px) {
-            img {
-                max-width: 50%;
-            }
-        }
-
-        /* タブレット〜PC向けのフォントサイズ調整（任意） */
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
-
-            p {
-                font-size: 1.1em;
-            }
-        }
-    </style>
-</head>
-<body>
-    <h1>駿台学園高校　天文部</h1>
-    <p>2025年度文化祭にお越しいただきありがとうございました。</p>
-    <p>文化祭終了後、天文部制作のゲームをこのページにします。</p>
-    <p>公開までしばらくお待ちください。</p>
-
-    <figure>
-        <img src="fusei.png" alt="お待ちください">
-        <figcaption>もうすこし待っててね、ごめんね</figcaption>
-    </figure>
-</body>
-</html>
-
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<head>
-    <title>天文部P班</title>
-</head>
-<body bgcolor="black">
-    <center>
-        <font color="white">
-            <h1>駿台学園高校　天文部</h1>
-                <p>2025年度文化祭にお越しいただきありがとうございました。</p>
-                <p>文化祭終了後、天文部制作のゲームをこのページにします。</p>
-                <p>公開までしばらくお待ちください。</p>
-            <figure>
-                <img src="fusei.png" >
-                <figcaption>もうすこし待っててね、ごめんね</figcaption>
-            </figure>
-        </font>
-    </center>
-</body> 
