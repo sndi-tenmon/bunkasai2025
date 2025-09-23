@@ -17,9 +17,9 @@
         body {
             display: flex;
             flex-direction: column;
-            align-items: center; /* 横方向を中央に */
-            justify-content: flex-start; /* 縦方向は上揃えに */
-            text-align: center;
+            align-items: flex-start; /* 基本は左寄せ */
+            justify-content: flex-start;
+            text-align: left;
             padding: 20px;
             box-sizing: border-box;
         }
@@ -27,6 +27,8 @@
         h1 {
             font-size: 2em;
             margin-bottom: 20px;
+            text-align: center; /* タイトルだけ中央寄せ */
+            width: 100%;
         }
 
         p {
@@ -34,25 +36,29 @@
             font-size: 1em;
         }
 
-        figure {
-            margin: 40px 0; /* figure全体に上下40px余白 */
-            max-width: 90%;
+        /* 画像リンク用 */
+        .game-link {
+            width: 100%; /* 幅いっぱいにしてテキスト中央寄せ */
+            text-align: center;
+            margin: 30px 0;
         }
 
-        img {
+        .game-link img {
+            display: inline-block; /* 中央寄せ用 */
             max-width: 100%;
             height: auto;
-            margin: 20px 0; /* 画像上下に余白 */
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        figcaption {
-            margin-top: 10px;
-            font-size: 0.9em;
-            color: #ccc;
+        .game-link img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 195, 255, 0.9);
         }
 
-        /* おしゃれなリンク */
-        a {
+        /* テキストリンク用 */
+        a.text-link {
             color: #00c3ff;
             text-decoration: none;
             position: relative;
@@ -60,7 +66,7 @@
             transition: color 0.3s ease;
         }
 
-        a::after {
+        a.text-link::after {
             content: "";
             position: absolute;
             left: 0;
@@ -73,19 +79,37 @@
             transition: transform 0.3s ease;
         }
 
-        a:hover {
+        a.text-link:hover {
             color: #66e0ff;
         }
 
-        a:hover::after {
+        a.text-link:hover::after {
             transform: scaleX(1);
             transform-origin: left;
         }
 
-        /* スマホ表示のときに画像サイズを調整（任意） */
+        /* 操作説明 */
+        .manual {
+            text-align: left;
+            max-width: 600px;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        /* 最後のリンクに余白 */
+        .footer-link {
+            margin-top: 40px;
+            margin-bottom: 60px;
+            text-align: left;
+        }
+
+        /* スマホ調整 */
         @media (max-width: 600px) {
-            img {
-                max-width: 70%;
+            .game-link img {
+                max-width: 90%;
+            }
+            .manual {
+                font-size: 0.9em;
             }
         }
 
@@ -106,12 +130,26 @@
     <p>文化祭で制作した天文部のゲームを掲載します。</p>
     <p>ぜひ、ハイスコアを目指して遊んでみてください。</p> 
     <p>1500点以上をとれたら、すごい！</p>
-    <a href="F_planet.html"><img src="gamen.png" ></a>
-    <h3>大ジャンプ</h3>　　PC：ENTER　　スマホ・タブレット：上矢印キー</p>
-    <h3>小ジャンプ</h3>　　PC：０（ゼロ）　　スマホ・タブレット：右矢印キー</p>
-    <h3>ミサイル</h3>　　PC：スペース　　スマホ・タブレット：右ボタン</p>
-    <h3>リセット（ED中）</h3>　　PC：R　　スマホ・タブレット：右ボタン</p>
-    <h3>リセット（プレイ中）</h3>　　PC：E　　スマホ・タブレット：（なし）</p>
-    <h2><a href="point_torisetsu.pdf">スコアの取得について</a></h2>    
+
+    <!-- 画像リンク -->
+    <div class="game-link">
+        <a href="F_planet.html">
+            <img src="gamen.png" alt="ゲーム画面">
+        </a>
+    </div>
+
+    <!-- 操作説明 -->
+    <div class="manual">
+        <h3>大ジャンプ</h3> PC：ENTER　　スマホ・タブレット：上矢印キー<br>
+        <h3>小ジャンプ</h3> PC：０（ゼロ）　　スマホ・タブレット：右矢印キー<br>
+        <h3>ミサイル</h3> PC：スペース　　スマホ・タブレット：右ボタン<br>
+        <h3>リセット（スコア発表中）</h3> PC：R　　スマホ・タブレット：右ボタン<br>
+        <h3>リセット（プレイ中）</h3> PC：E　　スマホ・タブレット：（なし）
+    </div>
+
+    <!-- スコア説明リンク -->
+    <h2 class="footer-link">
+        <a href="point_torisetsu.pdf" class="text-link">スコアの取得について</a>
+    </h2>
 </body>
 </html>
