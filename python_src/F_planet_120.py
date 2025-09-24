@@ -3,7 +3,7 @@ import pyxel, math
 # リソースファイル（画像などの入っているファイル）
 RESOURCE_FILE = "my_resource.pyxres"
 
-# 無敵モードにする時はTrue
+# 無敵モードにする時はTrueにする。
 IS_MUTEKI_MODE = False
 #IS_MUTEKI_MODE = True
 
